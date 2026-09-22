@@ -1,0 +1,123 @@
+/* Clinical Trust: reusable styles for future registro and inicio de sesión routes.
+   No application routes have been imported into citas-web yet. */
+.authShell {
+  --auth-canvas: #f8f9ff;
+  --auth-surface: #ffffff;
+  --auth-surface-soft: #eff4ff;
+  --auth-text: #0b1c30;
+  --auth-muted: #43474d;
+  --auth-navy: #001428;
+  --auth-blue: #0051d5;
+  --auth-blue-hover: #003ea8;
+  --auth-outline: #c3c6ce;
+  --auth-error: #ba1a1a;
+  --auth-error-surface: #ffdad6;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  background: var(--auth-canvas);
+  color: var(--auth-text);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.authShell *, .authShell *::before, .authShell *::after { box-sizing: inherit; }
+
+.authHeader {
+  width: min(100%, 1280px);
+  margin: 0 auto 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--auth-navy);
+}
+.brand { color: inherit; font-weight: 800; letter-spacing: -0.02em; text-decoration: none; }
+.environment { color: var(--auth-muted); font-size: 0.875rem; }
+.eyebrow { margin: 0 0 .5rem; color: inherit; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+.authTitle {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.authLead { margin: 0; color: var(--auth-muted); line-height: 1.6; }
+
+.authGrid {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(18rem, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.authCard {
+  background: var(--auth-surface);
+  border: 1px solid #e5eeff;
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  box-shadow: 0 1px 3px rgb(15 41 66 / 4%);
+}
+
+.authAside {
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--auth-navy);
+  color: #ffffff;
+}
+.authAside h2 { margin: 0 0 .75rem; font-size: clamp(1.35rem, 2vw, 1.75rem); line-height: 1.25; }
+.authAside p:last-child { margin: 0; color: #d8e6ff; line-height: 1.6; }
+
+.authFields { display: grid; gap: 1rem; margin-block: 1.5rem; }
+.authTwoColumns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.authField { display: grid; gap: 0.5rem; min-width: 0; }
+.authLabel { font-size: 0.875rem; line-height: 1.4; font-weight: 600; }
+
+.authInput {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--auth-outline);
+  border-radius: 0.5rem;
+  padding: 0.75rem 0.875rem;
+  background: var(--auth-surface-soft);
+  color: var(--auth-text);
+  font: inherit;
+}
+
+.authInput:focus-visible, .authButton:focus-visible, .authLink:focus-visible {
+  outline: 3px solid rgb(0 81 213 / 32%);
+  outline-offset: 2px;
+}
+
+.authInput[aria-invalid="true"] { border-color: var(--auth-error); background: #ffffff; }
+.authInput:disabled { opacity: 0.65; cursor: not-allowed; }
+
+.authButton {
+  min-height: 44px;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--auth-blue);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.authButton:hover:not(:disabled) { background: var(--auth-blue-hover); }
+.authButton:disabled { opacity: 0.6; cursor: not-allowed; }
+.authLink { color: var(--auth-blue); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.authHint { margin: 0; color: var(--auth-muted); font-size: 0.875rem; line-height: 1.5; }
+.authError { border-radius: 0.75rem; padding: 0.875rem 1rem; background: var(--auth-error-surface); color: var(--auth-error); }
+.authSuccess { margin: 0; border-radius: .75rem; padding: .875rem 1rem; background: #d9e2ff; color: #003c82; }
+.authFieldError { color: var(--auth-error); font-size: .8125rem; line-height: 1.35; }
+.authActions { margin-top: 1.5rem; }
+
+@media (max-width: 767px) {
+  .authHeader { margin-bottom: 1.5rem; }
+  .authGrid, .authTwoColumns { grid-template-columns: 1fr; }
+  .authAside { order: 2; }
+}

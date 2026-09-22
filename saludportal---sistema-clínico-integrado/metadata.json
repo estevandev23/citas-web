@@ -1,0 +1,6 @@
+{
+  "name": "SaludPortal - Sistema Clínico Integrado",
+  "description": "Portal del paciente y gestión clínica asistencial para agendamiento de citas médicas, autorizaciones EPS e historial de salud protegido.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
